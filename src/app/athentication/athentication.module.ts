@@ -5,6 +5,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../core/modules/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -33,6 +34,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AthenticationComponent, SignUpComponent, SignInComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), MaterialModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
 })
 export class AthenticationModule {}
