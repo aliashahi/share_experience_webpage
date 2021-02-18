@@ -1,0 +1,48 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li [ngClass]="{ active: carouselIndex == 0 }"></li>
+    <li [ngClass]="{ active: carouselIndex == 1 }"></li>
+    <li [ngClass]="{ active: carouselIndex == 2 }"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item" [ngClass]="{ active: carouselIndex == 0 }">
+      <img
+        src="../../../../../../assets/images/code0.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item" [ngClass]="{ active: carouselIndex == 1 }">
+      <img
+        src="../../../../../../assets/images/code1.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item" [ngClass]="{ active: carouselIndex == 2 }">
+      <img
+        src="../../../../../../assets/images/code2.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    role="button"
+    data-slide="prev"
+    (click)="onPrev()"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    role="button"
+    data-slide="next"
+    (click)="onNext()"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
