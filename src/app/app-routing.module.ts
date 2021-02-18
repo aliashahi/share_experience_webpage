@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './core/modules/simples/components/about-us/about-us.component';
+import { NotFoundPageComponent } from './core/modules/simples/components/not-found-page/not-found-page.component';
 import { CanActive } from './core/serivices/can-active.guard';
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'about-us',
     component: AboutUsComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundPageComponent,
   },
 ];
 
