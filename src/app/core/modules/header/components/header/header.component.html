@@ -1,8 +1,8 @@
 <nav
-  class="navbar fixed-top navbar-expand-lg navbar-dark"
+  class="navbar sticky-top navbar-expand-lg navbar-dark"
   style="background-color: #212c32"
 >
-  <a class="navbar-brand" href="./home">My Experience</a>
+  <a class="navbar-brand" routerLink="./home">My Experience</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -11,25 +11,30 @@
     aria-controls="navbarSupportedContent"
     aria-expanded="false"
     aria-label="Toggle navigation"
+    (click)="showNavbar = !showNavbar"
   >
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div
+    class="collapse navbar-collapse"
+    [ngClass]="{ show: showNavbar }"
+    id="navbarSupportedContent"
+  >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/home">Home </a>
+        <a class="nav-link" routerLink="/home">Home </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/about-us">About Us</a>
+        <a class="nav-link" routerLink="/about-us">About Us</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto" *ngIf="logged; else signed">
       <li class="nav-item active">
-        <a class="nav-link" href="/register/sign-in">Register</a>
+        <a class="nav-link" routerLink="/register/sign-in">Register</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="/register/sign-up">sign up</a>
+        <a class="nav-link" routerLink="/register/sign-up">sign up</a>
       </li>
     </ul>
     <ng-template #signed>
@@ -37,6 +42,11 @@
         <li class="nav-item active">
           <a class="nav-link" style="cursor: pointer" (click)="onSignOut()">
             sign out
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" style="cursor: pointer" (click)="onCreateNew()">
+            New
           </a>
         </li>
       </ul>

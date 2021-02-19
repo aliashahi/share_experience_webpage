@@ -26,6 +26,11 @@ const routes: Routes = [
     component: AboutUsComponent,
   },
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  {
     path: '**',
     component: NotFoundPageComponent,
   },

@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit, OnChanges {
   logged: boolean = false;
+  showNavbar: boolean = false;
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -22,5 +24,9 @@ export class HeaderComponent implements OnInit, OnChanges {
     localStorage.clear();
     this.router.navigate(['/register/sign-in']);
     this.ngOnInit();
+  }
+
+  onCreateNew() {
+    this.router.navigate(['/user/new']);
   }
 }

@@ -1,0 +1,22 @@
+<div class="row mt-5">
+  <div class="col-12">
+    <div class="display-4 ml-auto">Create New Problem:</div>
+    <form class="col mt-4" [formGroup]="form">
+      <mat-form-field appearance="outline" class="col-12">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" formControlName="title" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-12">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="desc"></textarea>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        class="btn btn-primary mr-5 ml-5"
+        [disabled]="form.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

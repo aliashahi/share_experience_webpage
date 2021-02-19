@@ -1,1 +1,10 @@
-user's panel
+<div class="fluid-container h-100">
+  <div class="sidenav">
+    <a [routerLink]="['/user']">Inbox</a>
+    <a [routerLink]="['/user/new']">Create</a>
+    <a [routerLink]="['/user']">Setting</a>
+  </div>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+</div>
