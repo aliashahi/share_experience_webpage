@@ -1,0 +1,57 @@
+<ng-container *ngIf="direction == 'LTR'; else rtl">
+  <div class="row m-1 p-1">
+    <div class="col-5 overflow-hidden half-width">
+      <img src="{{ card.coverUrl }}" height="250" alt="" />
+    </div>
+    <div class="col-7">
+      <h1 class="display-5 m-0">{{ card.title }}</h1>
+      <p class="m-0 ml-auto mb-2">{{ card.initDate }}</p>
+      <p class="d-flex overflow-scroll">
+        {{ card.desc }}
+      </p>
+      <hr />
+      <div class="row">
+        <div class="col-3 ml-auto mt-auto">
+          <button mat-icon-button class="custom-color-pink">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-icon-button class="custom-color-cyan">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button class="custom-color-red">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #rtl>
+  <div class="row m-1 p-1">
+    <div class="col-7">
+      <h1 class="display-5 m-0">{{ card.title }}</h1>
+      <p class="m-0 ml-auto mb-2">{{ card.initDate }}</p>
+      <p class="d-flex overflow-scroll">
+        {{ card.desc }}
+      </p>
+      <hr />
+      <div class="row">
+        <div class="col-3 ml-auto mt-auto">
+          <button mat-icon-button class="custom-color-pink">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-icon-button class="custom-color-cyan">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button class="custom-color-red">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-5 overflow-hidden half-width">
+      <!-- <img src="../../../../assets/images/code1.jpg" height="250" alt="" /> -->
+      <img src="{{ card.coverUrl }}" height="250" alt="" />
+    </div>
+  </div>
+</ng-template>

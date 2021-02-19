@@ -10,13 +10,17 @@ export class CarouselComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // setInterval(() => {
+    //   this.onNext();
+    // }, 10000);
+  }
 
   onPrev() {
-    this.carouselIndex = (this.carouselIndex - 1) % 3;
+    this.carouselIndex = Math.abs(this.carouselIndex - 1) % 3;
   }
 
   onNext() {
-    this.carouselIndex = (this.carouselIndex + 1) % 3;
+    this.carouselIndex = Math.abs(this.carouselIndex + 1) % 3;
   }
 }
